@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>Start JS Exercises</title>
+</head>
+
+<!--
+    the onload attribute says what javascript command to run after the page has loaded.
+    you'll have to replace 'globalworming' with 'hero' to continue
+-->
+<body onload="runMyScriptAs('globalworming')">
+
+<!--
+    many modern pages don't use much of the initial html. like here with the "greeting" element that's replaced using javascript
+-->
+<div id="app"><div class="loader"></div></div>
+<pre class="error"></pre>
+
+<script type="application/javascript">
+    // this function is called by the body onload attribute
+    const runMyScriptAs = (s) => {
+        // and after one second will replace the greeting element with our "app"
+        setTimeout(displayGreeting, 1000, s);
+        // and run a test script
+        setTimeout(runTest, 1100);
+    };
+
+    const displayGreeting = (s) => document.getElementById("app").innerHTML = "<h1>hello " + s + "</h1>";
+
+</script>
+
+<!-- you can put javascript in seperate files -->
+<script src="test.js"></script>
+
+<!-- if the test is successful, we display a link to the next exercise -->
+<div id="displayOnSuccess" hidden="hidden">
+    <a href="./basics/variables.html">next exercise</a>
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Operators</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+</head>
+<body onload="runScript(); RunTest.operators1()">
+<h1>Types</h1>
+<pre>
+javascript has operators like + - / * %
+due to the flexible types, the results can be surprising
+<code class="language-javascript">
+console.log("1" +  1) // -> 11
+console.log("1" - 1) // -> 0
+</code>
+to convert strings to numbers:
+<code class="language-javascript">
+const parsedFloat = parseFloat("11.5")
+console.log(parsedFloat, typeof parsedFloat) // -> 11.5, 'number'
+const parsedInt = parseInt("11.5")
+console.log(parsedInt, typeof parsedInt) // -> 11, 'number'
+</code>
+</pre>
+
+<h3>Your Task:</h3>
+<span>edit the script block of this file, so we get the correct number of heroes</span><br>
+<h3>Heroes in Tokyo: <span id="heroes"></span></h3>
+<pre class="error"></pre>
+
+<script type="application/javascript">
+    const runScript = () => {
+        const heroesInTsukiji = "7"
+        const heroesInShinjuku = "2"
+        document.getElementById("heroes").textContent = heroesInTsukiji + heroesInShinjuku
+    };
+
+</script>
+<script src="test.js"></script>
+
+<div id="displayOnSuccess" hidden="hidden">
+    see <a href=https://classroom.github.com/a/IX6Jyfuv">https://classroom.github.com/a/IX6Jyfuv</a> for the next exercise
+</div>
+
+<!-- fancy code highlighting -->
+<script>hljs.highlightAll();</script>
+</body>
+</html>

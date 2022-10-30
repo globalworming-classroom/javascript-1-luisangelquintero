@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Types</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+</head>
+<body onload="runScript(); RunTest.types()">
+<h1>Types</h1>
+<pre>
+variables have a type
+<code class="language-javascript">
+const truth = false;
+const quote = 'hello';
+const count = 1;
+const infinite = Infinity // e.g. when calculating 1 / 0
+const notANumber = NaN // e.g. when calculating 0 / 0
+const thing = {};
+const emptyArray = [];
+console.log(typeof truth) // boolean
+console.log(typeof quote) // string
+console.log(typeof count) // number
+console.log(typeof infinite) // number
+console.log(typeof notANumber) // number
+console.log(typeof thing) // object
+console.log(typeof emptyArray) // object, https://stackoverflow.com/a/12996879/1359903
+</code>
+Javascript will make best guess on which types you want
+<code class="language-javascript">
+console.log(typeof (quote + count)) // string
+console.log(typeof (truth  + count)) // number
+console.log(typeof notDeclared) // undefined
+</code>
+arrays can hold multiple types and you can reassign variables no matter the type
+<code class="language-javascript">
+const mess = [1,2,3,'four']
+
+let agile = true
+console.log(typeof agile) // boolean
+agile = 99.99
+console.log(typeof agile) // number
+</code>
+</pre>
+
+<h3>Your Task:</h3>
+<span>edit the script block of this file so the types array has examples of all types</span><br>
+<h4>types:</h4>
+<p>
+    boolean: <span id="boolean" class="check"></span>,<br>
+    number: <span id="number" class="check"></span>,<br>
+    string: <span id="string" class="check"></span>,<br>
+    object: <span id="object" class="check"></span>,<br>
+<pre class="error"></pre>
+
+<script type="application/javascript">
+    const runScript = () => {
+        const types = [
+            "someBoolean",
+            "someNumber",
+            "someObject",
+            "someString"
+        ]
+        types.forEach(entry => {
+            document.getElementById(typeof entry).textContent = '✅'
+        })
+    };
+
+</script>
+<script src="test.js"></script>
+
+<div id="displayOnSuccess" hidden="hidden">
+    <a href="./operators.html">next exercise</a>
+</div>
+
+<!-- fancy code highlighting -->
+<script>hljs.highlightAll();</script>
+</body>
+</html>
